@@ -1,0 +1,9 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost:8080/">
+    <file relUrl="Decryptor.DecryptService.svc" publishTime="06/25/2020 07:58:02" />
+    <file relUrl="bin/Decryptor.pdb" publishTime="06/25/2020 07:56:22" />
+    <file relUrl="bin/Decryptor.dll" publishTime="06/25/2020 07:56:22" />
+    <file relUrl="Web.config" publishTime="06/25/2020 07:53:48" />
+    <file relUrl="bin/Decryptor.dll.config" publishTime="06/25/2020 07:53:48" />
+  </publishTarget>
+</publishData>
