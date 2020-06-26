@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataAccessLibrary;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
@@ -13,17 +14,28 @@ namespace Authentificator
     public class AuthService : IAuthService
     {
         AUTHEntities1 _db;
+        Logger logger;
 
         public AuthService()
         {
             _db = new AUTHEntities1();
+            logger = new Logger();
         }
 
         //TODO: change return type to token type (prevoir return échec)
         public bool AuthUser(string usrname, string hashedPwd, string appToken)
         {
+            LogEntry attemptLog = new LogEntry();
+            attemptLog.Issuer = (int)Issuer.Auth;
+
             if (_db.Users.Count() < 1)
+            {
+                attemptLog.Type = (int)EntryType.Error;
+                attemptLog.Message = "Empty user list";
+
+                logger.AddLogEntry(attemptLog);
                 return false;
+            }
 
             var user = _db.Users.First(m => m.Username == usrname);
 
@@ -31,13 +43,21 @@ namespace Authentificator
             if(user != null && user.Password == hashedPwd)
             {
                 //Generate user token
+                attemptLog.Type = (int)EntryType.Info;
+                attemptLog.Message = "User " + usrname + " successfully logged in" ;
+
+                logger.AddLogEntry(attemptLog);
+                return true;
             }
             else
             {
+                attemptLog.Type = (int)EntryType.Info;
+                attemptLog.Message = "User doesn't exist or invalid password entered";
+
+                logger.AddLogEntry(attemptLog);
                 return false;
             }
 
-            return true;
         }
 
         public string GetData(int value)

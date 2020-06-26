@@ -1,7 +1,0 @@
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\bin\Debug\Decryptor.dll.config
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\bin\Debug\Decryptor.dll
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\bin\Debug\Decryptor.pdb
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\obj\Debug\Decryptor.csprojAssemblyReference.cache
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\obj\Debug\Decryptor.csproj.CoreCompileInputs.cache
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\obj\Debug\Decryptor.dll
-C:\Users\AzureUser\source\repos\Decryptor\Decryptor\obj\Debug\Decryptor.pdb
