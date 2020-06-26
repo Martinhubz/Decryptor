@@ -1,0 +1,13 @@
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\Authentificator.dll.config
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\Authentificator.dll
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\Authentificator.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.dll
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\EntityFramework.dll
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.dll.config
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\EntityFramework.xml
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.csprojAssemblyReference.cache
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.csproj.CoreCompileInputs.cache
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.csproj.CopyComplete
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.dll
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.pdb
