@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.IdentityModel.Tokens;
 
 namespace Authentificator
 {
@@ -24,7 +25,7 @@ namespace Authentificator
         }
 
         //TODO: change return type to token type (prevoir return échec)
-        public string AuthUser(string usrname, string hashedPwd, string appToken)
+        public UserNameSecurityToken AuthUser(string usrname, string hashedPwd, string appToken)
         {
             LogEntry attemptLog = new LogEntry();
             attemptLog.Issuer = (int)Issuer.Auth;
@@ -35,7 +36,7 @@ namespace Authentificator
                 attemptLog.Message = "Empty user list";
 
                 logger.AddLogEntry(attemptLog);
-                return "";
+                return null;
             }
 
             var user = _db.Users.First(m => m.Username == usrname);
@@ -51,7 +52,7 @@ namespace Authentificator
 
                 ITokenBuilder Builder = new TokenBuilder();
 
-                return Builder.BuildToken();
+                return new UserNameSecurityToken(usrname, hashedPwd);
             }
             else
             {
@@ -59,7 +60,7 @@ namespace Authentificator
                 attemptLog.Message = "User doesn't exist or invalid password entered";
 
                 logger.AddLogEntry(attemptLog);
-                return "";
+                return null;
             }
 
         }

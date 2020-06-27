@@ -11,3 +11,4 @@ C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentifica
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.csproj.CopyComplete
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.dll
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\microsoft.identitymodel.dll

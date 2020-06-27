@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.IdentityModel.Tokens;
 
 namespace Authentificator
 {
@@ -21,7 +22,7 @@ namespace Authentificator
 
         // TODO: Add your service operations here
         [OperationContract]
-        string AuthUser(string usrname, string hashedPwd, string appToken);
+        UserNameSecurityToken AuthUser(string usrname, string hashedPwd, string appToken);
 
     }
 

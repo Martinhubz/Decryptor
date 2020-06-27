@@ -1,7 +1,16 @@
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Decryptorus.dll.config
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Decryptorus.dll
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Decryptorus.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Authentificator.dll
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\DataAccessLibrary.dll
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\EntityFramework.dll
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Authentificator.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\Authentificator.dll.config
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\DataAccessLibrary.pdb
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\DataAccessLibrary.dll.config
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\bin\EntityFramework.xml
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\obj\Debug\Decryptorus.csprojAssemblyReference.cache
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\obj\Debug\Decryptorus.csproj.CoreCompileInputs.cache
+C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\obj\Debug\Decryptorus.csproj.CopyComplete
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\obj\Debug\Decryptorus.dll
 C:\Users\AzureUser\source\repos\Decryptor\Decryptorus\obj\Debug\Decryptorus.pdb

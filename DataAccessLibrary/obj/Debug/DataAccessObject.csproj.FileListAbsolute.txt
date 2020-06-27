@@ -3,8 +3,8 @@ C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\bin\Debug\DataAccess
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\bin\Debug\DataAccessLibrary.pdb
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\bin\Debug\EntityFramework.dll
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\bin\Debug\EntityFramework.xml
+C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csprojAssemblyReference.cache
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csproj.CoreCompileInputs.cache
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csproj.CopyComplete
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessLibrary.dll
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessLibrary.pdb
-C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csprojAssemblyReference.cache
