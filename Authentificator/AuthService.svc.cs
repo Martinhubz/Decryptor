@@ -14,16 +14,17 @@ namespace Authentificator
     public class AuthService : IAuthService
     {
         AUTHEntities1 _db;
-        Logger logger;
+        ILogger logger;
 
         public AuthService()
         {
             _db = new AUTHEntities1();
             logger = new Logger();
+            
         }
 
         //TODO: change return type to token type (prevoir return échec)
-        public bool AuthUser(string usrname, string hashedPwd, string appToken)
+        public string AuthUser(string usrname, string hashedPwd, string appToken)
         {
             LogEntry attemptLog = new LogEntry();
             attemptLog.Issuer = (int)Issuer.Auth;
@@ -34,7 +35,7 @@ namespace Authentificator
                 attemptLog.Message = "Empty user list";
 
                 logger.AddLogEntry(attemptLog);
-                return false;
+                return "";
             }
 
             var user = _db.Users.First(m => m.Username == usrname);
@@ -47,7 +48,10 @@ namespace Authentificator
                 attemptLog.Message = "User " + usrname + " successfully logged in" ;
 
                 logger.AddLogEntry(attemptLog);
-                return true;
+
+                ITokenBuilder Builder = new TokenBuilder();
+
+                return Builder.BuildToken();
             }
             else
             {
@@ -55,7 +59,7 @@ namespace Authentificator
                 attemptLog.Message = "User doesn't exist or invalid password entered";
 
                 logger.AddLogEntry(attemptLog);
-                return false;
+                return "";
             }
 
         }

@@ -7,3 +7,4 @@ C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccess
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csproj.CopyComplete
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessLibrary.dll
 C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessLibrary.pdb
+C:\Users\AzureUser\source\repos\Decryptor\DataAccessLibrary\obj\Debug\DataAccessObject.csprojAssemblyReference.cache

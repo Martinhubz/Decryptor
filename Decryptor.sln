@@ -3,13 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1169
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptor", "Decryptor\Decryptor.csproj", "{78EFBA2F-60A7-411C-83D6-5473C90A8047}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptorus", "Decryptorus\Decryptorus.csproj", "{33EC008F-3FB0-4B30-A401-5D77F95C5E7D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentificator", "Authentificator\Authentificator.csproj", "{1FED8143-245A-419F-8D39-E2E54AFBD8C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessObject", "DataAccessLibrary\DataAccessObject.csproj", "{16102155-D784-4018-B1F7-76BD857DAC7D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DecryptorHostIIS(1)", "..\..\..\..\..\WCFServices\DecryptorHostIIS\", "{92FB0F02-788D-4C11-B544-C6FE18E2B885}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{1fed8143-245a-419f-8d39-e2e54afbd8c1}|Authentificator.dll;{16102155-D784-4018-B1F7-76BD857DAC7D}|DataAccessLibrary.dll;{6638ef11-b15f-493a-a83c-592015635be2}|Decryptorus.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49828"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\WCFServices\DecryptorHostIIS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49828\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49828"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\WCFServices\DecryptorHostIIS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49828\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49828"
+		SlnRelativePath = "..\..\..\..\..\WCFServices\DecryptorHostIIS\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptorus", "Decryptorus\Decryptorus.csproj", "{6638EF11-B15F-493A-A83C-592015635BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +38,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{78EFBA2F-60A7-411C-83D6-5473C90A8047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78EFBA2F-60A7-411C-83D6-5473C90A8047}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78EFBA2F-60A7-411C-83D6-5473C90A8047}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78EFBA2F-60A7-411C-83D6-5473C90A8047}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33EC008F-3FB0-4B30-A401-5D77F95C5E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33EC008F-3FB0-4B30-A401-5D77F95C5E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33EC008F-3FB0-4B30-A401-5D77F95C5E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33EC008F-3FB0-4B30-A401-5D77F95C5E7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FED8143-245A-419F-8D39-E2E54AFBD8C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FED8143-245A-419F-8D39-E2E54AFBD8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FED8143-245A-419F-8D39-E2E54AFBD8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +46,14 @@ Global
 		{16102155-D784-4018-B1F7-76BD857DAC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16102155-D784-4018-B1F7-76BD857DAC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16102155-D784-4018-B1F7-76BD857DAC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FB0F02-788D-4C11-B544-C6FE18E2B885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FB0F02-788D-4C11-B544-C6FE18E2B885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FB0F02-788D-4C11-B544-C6FE18E2B885}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FB0F02-788D-4C11-B544-C6FE18E2B885}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6638EF11-B15F-493A-A83C-592015635BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6638EF11-B15F-493A-A83C-592015635BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6638EF11-B15F-493A-A83C-592015635BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6638EF11-B15F-493A-A83C-592015635BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

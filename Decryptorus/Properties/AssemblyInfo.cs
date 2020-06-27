@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Authenticator")]
+[assembly: AssemblyTitle("Decryptorus")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Authenticator")]
+[assembly: AssemblyProduct("Decryptorus")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("33ec008f-3fb0-4b30-a401-5d77f95c5e7d")]
+[assembly: Guid("6638ef11-b15f-493a-a83c-592015635be2")]
 
 // Version information for an assembly consists of the following four values:
 //

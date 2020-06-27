@@ -21,7 +21,7 @@ namespace Authentificator
 
         // TODO: Add your service operations here
         [OperationContract]
-        bool AuthUser(string usrname, string hashedPwd, string appToken);
+        string AuthUser(string usrname, string hashedPwd, string appToken);
 
     }
 
