@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.IdentityModel.Tokens;
+using System.Collections.ObjectModel;
 
 namespace Authentificator
 {
@@ -22,10 +23,42 @@ namespace Authentificator
 
         // TODO: Add your service operations here
         [OperationContract]
-        UserNameSecurityToken AuthUser(string usrname, string hashedPwd, string appToken);
+        UserToken AuthUser(string usrname, string hashedPwd, string appToken);
 
     }
 
+    [DataContract]
+    public class UserToken 
+    {
+        UserNameSecurityToken usrToken;
+
+        public UserToken(string userName, string password)
+        {
+            usrToken = new UserNameSecurityToken(userName, password);
+        }
+
+        public UserToken(string userName, string password, string id)
+        {
+            usrToken = new UserNameSecurityToken(userName, password, id);
+        }
+        
+        [DataMember]
+        public DateTime ValidityStart { get { return usrToken.ValidFrom; } }
+
+        [DataMember]
+        public DateTime ExpiryTime { get { return usrToken.ValidTo; } }
+
+        [DataMember]
+        public string TokenID { get { return usrToken.Id; } }
+
+        [DataMember]
+        public List<SecurityKey> Keys
+        {
+            get { return new List<SecurityKey>(usrToken.SecurityKeys); }
+        }
+        
+
+    }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]

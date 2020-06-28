@@ -25,7 +25,7 @@ namespace Authentificator
         }
 
         //TODO: change return type to token type (prevoir return échec)
-        public UserNameSecurityToken AuthUser(string usrname, string hashedPwd, string appToken)
+        public UserToken AuthUser(string usrname, string hashedPwd, string appToken)
         {
             LogEntry attemptLog = new LogEntry();
             attemptLog.Issuer = (int)Issuer.Auth;
@@ -52,7 +52,7 @@ namespace Authentificator
 
                 ITokenBuilder Builder = new TokenBuilder();
 
-                return new UserNameSecurityToken(usrname, hashedPwd);
+                return new UserToken(usrname, hashedPwd);
             }
             else
             {

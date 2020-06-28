@@ -116,7 +116,6 @@
     <Compile Include="User.cs">
       <DependentUpon>SecurityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
