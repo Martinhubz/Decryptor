@@ -5,8 +5,9 @@
       <PropertyRef Name="Username" />
     </Key>
     <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="UsrToken_Id" Type="varchar(max)" />
   </EntityType>
   <EntityContainer Name="AUTHModelStoreContainer">
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />

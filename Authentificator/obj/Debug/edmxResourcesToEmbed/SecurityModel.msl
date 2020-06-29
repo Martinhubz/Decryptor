@@ -2,8 +2,9 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AUTHModelStoreContainer" CdmEntityContainer="AUTHEntities1">
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="AUTHModel.User">
+      <EntityTypeMapping TypeName="IsTypeOf(AUTHModel.User)">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UsrToken" ColumnName="UsrToken_Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Email" ColumnName="Email" />

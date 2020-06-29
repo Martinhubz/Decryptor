@@ -76,6 +76,7 @@
       <DependentUpon>SecurityModel.edmx</DependentUpon>
       <LastGenOutput>SecurityModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="SecurityModel.edmx.sql" />
     <Content Include="SecurityModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SecurityModel.edmx</DependentUpon>

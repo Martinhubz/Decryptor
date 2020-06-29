@@ -28,12 +28,16 @@ namespace Authentificator
     }
 
     [DataContract]
-    public class UserToken 
+    public class UserToken
     {
         DateTime validFrom;
         DateTime expiryTime;
         string id;
         string key;
+        public UserToken()
+        {
+
+        }
 
         public UserToken(string tokId, DateTime start, DateTime end, string tokKey)
         {
