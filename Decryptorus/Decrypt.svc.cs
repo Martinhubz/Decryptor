@@ -17,6 +17,12 @@ namespace Decryptorus
             return string.Format("You entered: {0}", value);
         }
 
+        public String m_service(string msg)
+        {
+
+            return "test";
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

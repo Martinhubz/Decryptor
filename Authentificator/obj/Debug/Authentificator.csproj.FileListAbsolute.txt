@@ -3,6 +3,7 @@ C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\Authentificator.dl
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\Authentificator.pdb
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.dll
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\EntityFramework.dll
+C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\microsoft.identitymodel.dll
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.pdb
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\DataAccessLibrary.dll.config
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\EntityFramework.xml
@@ -11,4 +12,3 @@ C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentifica
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.csproj.CopyComplete
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.dll
 C:\Users\AzureUser\source\repos\Decryptor\Authentificator\obj\Debug\Authentificator.pdb
-C:\Users\AzureUser\source\repos\Decryptor\Authentificator\bin\microsoft.identitymodel.dll

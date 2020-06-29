@@ -30,6 +30,51 @@ namespace Authentificator
     [DataContract]
     public class UserToken 
     {
+        DateTime validFrom;
+        DateTime expiryTime;
+        string id;
+        string key;
+
+        public UserToken(string tokId, DateTime start, DateTime end, string tokKey)
+        {
+            id = tokId;
+            validFrom = start;
+            expiryTime = end;
+            key = tokKey;
+        }
+
+
+        [DataMember]
+        public DateTime ValidFrom
+        {
+            get { return validFrom; }
+            set { validFrom = value; }
+        }
+
+        [DataMember]
+        public DateTime ExpiryTime
+        {
+            get { return expiryTime; }
+            set { expiryTime = value; }
+        }
+
+        [DataMember]
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember]
+        public string Key
+        {
+            get { return key; }
+            set { key = value; }
+        }
+
+
+
+        /*
         UserNameSecurityToken usrToken;
 
         public UserToken(string userName, string password)
@@ -42,9 +87,10 @@ namespace Authentificator
             usrToken = new UserNameSecurityToken(userName, password, id);
         }
         
+        
         [DataMember]
-        public DateTime ValidityStart { get { return usrToken.ValidFrom; } }
-
+        public DateTime ValidityStart { get { return usrToken.ValidFrom; } }*/
+        /*
         [DataMember]
         public DateTime ExpiryTime { get { return usrToken.ValidTo; } }
 
@@ -55,8 +101,8 @@ namespace Authentificator
         public List<SecurityKey> Keys
         {
             get { return new List<SecurityKey>(usrToken.SecurityKeys); }
-        }
-        
+        }*/
+
 
     }
 
