@@ -68,6 +68,7 @@
       <DependentUpon>Decrypt.svc</DependentUpon>
     </Compile>
     <Compile Include="Decrypt.cs" />
+    <Compile Include="KeyGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
