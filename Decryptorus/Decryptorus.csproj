@@ -103,8 +103,8 @@
     <Compile Include="Decrypt.svc.cs">
       <DependentUpon>Decrypt.svc</DependentUpon>
     </Compile>
-    <Compile Include="Decrypt.cs" />
     <Compile Include="Decryption.cs" />
+    <Compile Include="IDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToolsNotifResult.cs" />
   </ItemGroup>

@@ -12,7 +12,7 @@
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar(max)" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="UsrToken_Id" Type="varchar(max)" />
+          <Property Name="UsrToken" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="AUTHModelStoreContainer">
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -42,7 +42,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="IsTypeOf(AUTHModel.User)">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="UsrToken" ColumnName="UsrToken_Id" />
+                <ScalarProperty Name="UsrToken" ColumnName="UsrToken" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Email" ColumnName="Email" />
