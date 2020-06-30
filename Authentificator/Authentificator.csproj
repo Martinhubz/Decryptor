@@ -44,8 +44,12 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="microsoft.identitymodel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.7.0.0\lib\net35\microsoft.identitymodel.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -72,6 +76,7 @@
       <DependentUpon>SecurityModel.edmx</DependentUpon>
       <LastGenOutput>SecurityModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="SecurityModel.edmx.sql" />
     <Content Include="SecurityModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SecurityModel.edmx</DependentUpon>
