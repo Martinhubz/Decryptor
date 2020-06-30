@@ -50,7 +50,9 @@ namespace Authentificator
                 
 
                 //TODO: Check appToken validity
-                if (user != null && user.Password == hashedPwd)
+                if (user != null 
+                    && user.Password == hashedPwd
+                    && appToken == AppToken.APPTOKEN)
                 {
                     //Generate user token
                     attemptLog.Type = (int)EntryType.Info;
