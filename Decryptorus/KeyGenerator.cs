@@ -12,7 +12,7 @@ namespace Decryptorus
         public int[] Key { get => key; set => key = value; }
 
         public int begin = 65;
-        public int limit = 97;
+        public int limit = 90;
         public int nbMaxKey;
         public int[] exclude = { 91, 92, 93, 94, 95, 96 };
 

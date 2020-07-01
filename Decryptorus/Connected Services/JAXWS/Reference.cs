@@ -16,23 +16,23 @@ namespace Decryptorus.JAXWS {
     public interface CheckerEndpoint {
         
         // CODEGEN: Generating message contract since element name appToken from namespace  is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkOperationRequest", ReplyAction="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkOperationResponse")]
-        Decryptorus.JAXWS.checkOperationResponse checkOperation(Decryptorus.JAXWS.checkOperationRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptRequest", ReplyAction="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptResponse")]
+        Decryptorus.JAXWS.checkDecryptResponse checkDecrypt(Decryptorus.JAXWS.checkDecryptRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class checkOperationRequest {
+    public partial class checkDecryptRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="checkOperation", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
-        public Decryptorus.JAXWS.checkOperationRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="checkDecrypt", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
+        public Decryptorus.JAXWS.checkDecryptRequestBody Body;
         
-        public checkOperationRequest() {
+        public checkDecryptRequest() {
         }
         
-        public checkOperationRequest(Decryptorus.JAXWS.checkOperationRequestBody Body) {
+        public checkDecryptRequest(Decryptorus.JAXWS.checkDecryptRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -41,7 +41,7 @@ namespace Decryptorus.JAXWS {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class checkOperationRequestBody {
+    public partial class checkDecryptRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string appToken;
@@ -49,10 +49,10 @@ namespace Decryptorus.JAXWS {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string decryptInfo;
         
-        public checkOperationRequestBody() {
+        public checkDecryptRequestBody() {
         }
         
-        public checkOperationRequestBody(string appToken, string decryptInfo) {
+        public checkDecryptRequestBody(string appToken, string decryptInfo) {
             this.appToken = appToken;
             this.decryptInfo = decryptInfo;
         }
@@ -62,15 +62,15 @@ namespace Decryptorus.JAXWS {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class checkOperationResponse {
+    public partial class checkDecryptResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="checkOperationResponse", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
-        public Decryptorus.JAXWS.checkOperationResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="checkDecryptResponse", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
+        public Decryptorus.JAXWS.checkDecryptResponseBody Body;
         
-        public checkOperationResponse() {
+        public checkDecryptResponse() {
         }
         
-        public checkOperationResponse(Decryptorus.JAXWS.checkOperationResponseBody Body) {
+        public checkDecryptResponse(Decryptorus.JAXWS.checkDecryptResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -79,15 +79,15 @@ namespace Decryptorus.JAXWS {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="")]
-    public partial class checkOperationResponseBody {
+    public partial class checkDecryptResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string decryptValidation;
         
-        public checkOperationResponseBody() {
+        public checkDecryptResponseBody() {
         }
         
-        public checkOperationResponseBody(string decryptValidation) {
+        public checkDecryptResponseBody(string decryptValidation) {
             this.decryptValidation = decryptValidation;
         }
     }
@@ -120,16 +120,16 @@ namespace Decryptorus.JAXWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Decryptorus.JAXWS.checkOperationResponse Decryptorus.JAXWS.CheckerEndpoint.checkOperation(Decryptorus.JAXWS.checkOperationRequest request) {
-            return base.Channel.checkOperation(request);
+        Decryptorus.JAXWS.checkDecryptResponse Decryptorus.JAXWS.CheckerEndpoint.checkDecrypt(Decryptorus.JAXWS.checkDecryptRequest request) {
+            return base.Channel.checkDecrypt(request);
         }
         
-        public string checkOperation(string appToken, string decryptInfo) {
-            Decryptorus.JAXWS.checkOperationRequest inValue = new Decryptorus.JAXWS.checkOperationRequest();
-            inValue.Body = new Decryptorus.JAXWS.checkOperationRequestBody();
+        public string checkDecrypt(string appToken, string decryptInfo) {
+            Decryptorus.JAXWS.checkDecryptRequest inValue = new Decryptorus.JAXWS.checkDecryptRequest();
+            inValue.Body = new Decryptorus.JAXWS.checkDecryptRequestBody();
             inValue.Body.appToken = appToken;
             inValue.Body.decryptInfo = decryptInfo;
-            Decryptorus.JAXWS.checkOperationResponse retVal = ((Decryptorus.JAXWS.CheckerEndpoint)(this)).checkOperation(inValue);
+            Decryptorus.JAXWS.checkDecryptResponse retVal = ((Decryptorus.JAXWS.CheckerEndpoint)(this)).checkDecrypt(inValue);
             return retVal.Body.decryptValidation;
         }
     }

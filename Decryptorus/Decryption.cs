@@ -60,30 +60,50 @@ namespace Decryptorus
             int count = 0;
             int numberOfKeyPossible = 600000;
             object locky = new object();
-            k.Initialize();
+            string result = "";
+
+
+            string key;
+            //while (key != "ZZZZ")
+            //{
+            //    string tmp = d.AlgoXor(txt, key);
+            //    key = k.IncrementKey();
+            //    count++;
+            //}
             Parallel.For(0, numberOfKeyPossible, options, (index, state) =>
             {
-                string key;
+               
                 lock (locky)
                 {
                     key = k.IncrementKey();
-
                 }
 
                 string tmp = d.AlgoXor(txt, key);
-                //JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
-                //string result = platform.checkOperation(AppToken.APPTOKEN, tmp);
-                Interlocked.Increment(ref count); 
+            try
+            {
+
+                    JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
+                //JAXWS.checkDecryptRequest insert = new JAXWS.checkDecryptRequest();
+                JAXWS.checkDecryptResponse response = new JAXWS.checkDecryptResponse();
+                //JAXWS.checkDecryptResponse response = new JAXWS.checkDecryptResponse();
+                    response = platform.checkDecrypt(AppToken.APPTOKEN, tmp);
+                }
+                catch (Exception e)
+                {
+                    message.Info = e.Message;
+                }
+                Interlocked.Increment(ref count);
                 if (key == "ZZZZ")
                 {
                     message.StatusOp = true;
-                    message.OperationVersion = "ZZZZ";
-
+                    message.OperationVersion = result;
+                   // message.Info = platform.Endpoint.ToString();
                     state.Stop();
                 }
             });
-            //    key = k.IncrementKey();
-            message.Info = count.ToString();
+            key = k.IncrementKey();
+            //message.Info = result;
+
             //message.OperationVersion = "ZZZZ";
             return message;
         }

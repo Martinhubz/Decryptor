@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="acf0c25e-d552-44ab-92e5-8811c3b431bc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d02fc016-0f03-4f1d-b681-02b9f125b77c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,8 +21,8 @@
     <MetadataSource Address="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CheckingService.wsdl" MetadataType="Wsdl" ID="2998c670-71b4-4c43-bd12-9a602d30e2b8" SourceId="1" SourceUrl="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?WSDL" />
-    <MetadataFile FileName="CheckerServiceBean.xsd" MetadataType="Schema" ID="9b3eac3d-47f3-4488-8064-a394403928de" SourceId="1" SourceUrl="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?xsd=1" />
+    <MetadataFile FileName="CheckingService.wsdl" MetadataType="Wsdl" ID="f5188b17-1e6c-4901-b5fe-25e776d3e233" SourceId="1" SourceUrl="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?WSDL" />
+    <MetadataFile FileName="CheckerServiceBean.xsd" MetadataType="Schema" ID="bffcd52b-4ffa-4219-8116-db7ebb1516b7" SourceId="1" SourceUrl="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -5,21 +5,21 @@
       <xsd:import schemaLocation="http://13.80.153.1:10080/CheckingService/CheckerServiceBean?xsd=1" namespace="http://facade.checkerfacade.cesi.com/" />
     </xsd:schema>
   </types>
-  <message name="checkOperation">
-    <part name="parameters" element="tns:checkOperation" />
+  <message name="checkDecrypt">
+    <part name="parameters" element="tns:checkDecrypt" />
   </message>
-  <message name="checkOperationResponse">
-    <part name="parameters" element="tns:checkOperationResponse" />
+  <message name="checkDecryptResponse">
+    <part name="parameters" element="tns:checkDecryptResponse" />
   </message>
   <portType name="CheckerEndpoint">
-    <operation name="checkOperation">
-      <input wsam:Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkOperationRequest" message="tns:checkOperation" />
-      <output wsam:Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkOperationResponse" message="tns:checkOperationResponse" />
+    <operation name="checkDecrypt">
+      <input wsam:Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptRequest" message="tns:checkDecrypt" />
+      <output wsam:Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptResponse" message="tns:checkDecryptResponse" />
     </operation>
   </portType>
   <binding name="CheckingPortBinding" type="tns:CheckerEndpoint">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="checkOperation">
+    <operation name="checkDecrypt">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
