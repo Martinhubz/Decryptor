@@ -71,50 +71,60 @@ namespace Decryptorus
             object locky = new object();
             object result = "";
             string key;
-
-
-            // Launch each key for the file 
-            Parallel.For(0, numberOfKeyPossible, options, (index, state) =>
+            try
             {
-                // lock the increment to not access it at the same time optimize
-                lock (locky)
-                {
-                    // increment the key
-                    key = k.IncrementKey();
-                }
-                // Algo XOR 
-                string tmp = d.AlgoXor(txt, key);
-                try
-                {
-                    // send request to Jax to verify
-                    JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
-                    //result = platform.checkDecrypt(AppToken.APPTOKEN, tmp);
+                message.Info = "toto a la plage";
+                // ServiceDecrypt.CheckerEndpointClient platform = new ServiceDecrypt.CheckerEndpointClient();
+                //string ret = platform.checkDecrypt("apptok", "decryptInfo");
+                //System.Diagnostics.Debug.WriteLine(ret);
 
-                }
-                catch (Exception e)
-                {
-                    message.Info = e.Message;
-                    System.Diagnostics.Debug.WriteLine(e.Message);
-                }
+            }
+            catch (Exception e)
+            {
+                message.Info = e.Message;
+            }
+            //result = platform.checkDecrypt(AppToken.APPTOKEN, txt);
+            // Launch each key for the file 
+            //Parallel.For(0, numberOfKeyPossible, options, (index, state) =>
+            //{
+            //    // lock the increment to not access it at the same time optimize
+            //    lock (locky)
+            //    {
+            //        // increment the key
+            //        key = k.IncrementKey();
+            //    }
+            //    // Algo XOR 
+            //    string tmp = d.AlgoXor(txt, key);
+            //    try
+            //    {
+            //        // send request to Jax to verify
+                    
 
-                Interlocked.Increment(ref count);
-                if (key == "ZZZZ" ) // mettre condition result pour stoper la boucle
-                {
-                    if (true)// mettre condition result pour stoper la boucle
-                    {
-                        try
-                        {
-                           // createPdf(fileName, txt);
-                            //sendEmail(fileName);
-                        }catch(Exception e){
-                            message.Info = e.Message;
-                        }
-                    }
-                    message.StatusOp = true;
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        message.Info = e.Message;
+            //        System.Diagnostics.Debug.WriteLine(e.Message);
+            //    }
 
-                    state.Stop();
-                }
-            });
+            //    Interlocked.Increment(ref count);
+            //    if (key == "ZZZZ" ) // mettre condition result pour stoper la boucle
+            //    {
+            //        if (true)// mettre condition result pour stoper la boucle
+            //        {
+            //            try
+            //            {
+            //               // createPdf(fileName, txt);
+            //                //sendEmail(fileName);
+            //            }catch(Exception e){
+            //                message.Info = e.Message;
+            //            }
+            //        }
+            //        message.StatusOp = true;
+
+            //        state.Stop();
+            //    }
+            //});
             
             return message;
         }
