@@ -1,12 +1,19 @@
 ﻿using Authentificator;
 using EASendMail;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using MailAddress = System.Net.Mail.MailAddress;
+using SmtpClient = System.Net.Mail.SmtpClient;
 
 namespace Decryptorus
 {
@@ -49,6 +56,8 @@ namespace Decryptorus
 
         public STG ParallelDecrypt(STG message)
         {
+
+            // attribut needed to work
             List<Task> tasks = new List<Task>();
             Decryption d = new Decryption();
             KeyGenerator k = new KeyGenerator();
@@ -60,89 +69,105 @@ namespace Decryptorus
             int count = 0;
             int numberOfKeyPossible = 600000;
             object locky = new object();
-            string result = "";
-
-
+            object result = "";
             string key;
-            //while (key != "ZZZZ")
-            //{
-            //    string tmp = d.AlgoXor(txt, key);
-            //    key = k.IncrementKey();
-            //    count++;
-            //}
+
+
+            // Launch each key for the file 
             Parallel.For(0, numberOfKeyPossible, options, (index, state) =>
             {
-               
+                // lock the increment to not access it at the same time optimize
                 lock (locky)
                 {
+                    // increment the key
                     key = k.IncrementKey();
                 }
-
+                // Algo XOR 
                 string tmp = d.AlgoXor(txt, key);
-            try
-            {
-
+                try
+                {
+                    // send request to Jax to verify
                     JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
-                //JAXWS.checkDecryptRequest insert = new JAXWS.checkDecryptRequest();
-                JAXWS.checkDecryptResponse response = new JAXWS.checkDecryptResponse();
-                //JAXWS.checkDecryptResponse response = new JAXWS.checkDecryptResponse();
-                    response = platform.checkDecrypt(AppToken.APPTOKEN, tmp);
+                    //result = platform.checkDecrypt(AppToken.APPTOKEN, tmp);
+
                 }
                 catch (Exception e)
                 {
                     message.Info = e.Message;
+                    System.Diagnostics.Debug.WriteLine(e.Message);
                 }
+
                 Interlocked.Increment(ref count);
-                if (key == "ZZZZ")
+                if (key == "ZZZZ" ) // mettre condition result pour stoper la boucle
                 {
+                    if (true)// mettre condition result pour stoper la boucle
+                    {
+                        try
+                        {
+                           // createPdf(fileName, txt);
+                            //sendEmail(fileName);
+                        }catch(Exception e){
+                            message.Info = e.Message;
+                        }
+                    }
                     message.StatusOp = true;
-                    message.OperationVersion = result;
-                   // message.Info = platform.Endpoint.ToString();
+
                     state.Stop();
                 }
             });
-            key = k.IncrementKey();
-            //message.Info = result;
-
-            //message.OperationVersion = "ZZZZ";
+            
             return message;
         }
 
-        //public string sendEmail()
-        //{
-        //    SmtpMail oMail = new SmtpMail("TryIt");
-        //    oMail.From = "groupeprojetdevnonmobile@gmail.com";
-        //    oMail.To = "theo.fombasso@gmail.comt";
-        //    oMail.Subject = "test email from c# project";
-        //    // Set email body
-        //    oMail.TextBody = "this is a test email sent from c# project, do not reply";
+        public static string sendEmail(string path)
+        {
+            string result = "ok";
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                mail.From = new MailAddress("groupeprojetdevnonmobile@gmail.com");
+                mail.To.Add("theo.fombasso@gmail.com");
+                mail.Subject = "Test Mail - 1";
+                mail.Body = "mail with attachment";
 
-        //    // SMTP server address
-        //    SmtpServer oServer = new SmtpServer("smtp.emailarchitect.net");
-
-        //    // User and password for ESMTP authentication
-        //    oServer.User = "test@emailarchitect.net";
-        //    oServer.Password = "testpassword";
-
-        //    // Most mordern SMTP servers require SSL/TLS connection now.
-        //    // ConnectTryTLS means if server supports SSL/TLS, SSL/TLS will be used automatically.
-        //    oServer.ConnectType = SmtpConnectType.ConnectTryTLS;
-
-        //    // If your SMTP server uses 587 port
-        //    // oServer.Port = 587;
-
-        //    // If your SMTP server requires SSL/TLS connection on 25/587/465 port
-        //    // oServer.Port = 25; // 25 or 587 or 465
-        //    // oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
-
-        //    Console.WriteLine("start to send email ...");
-
-        //    SmtpClient oSmtp = new SmtpClient();
-        //    oSmtp.SendMail(oServer, oMail);
+                path = path.Split('\\').Last();
+                path = path.Replace("txt", "pdf");
+                System.Net.Mail.Attachment attachment;
+                attachment = new System.Net.Mail.Attachment("C:\\Users\\AzureUser\\Desktop\\"+path);
+                mail.Attachments.Add(attachment);
 
 
-        //}
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("groupeprojetdevnonmobile@gmail.com", "ProjetDev123");
+                SmtpServer.EnableSsl = true;
 
+                SmtpServer.Send(mail);
+            }
+            catch (Exception e)
+            {
+                result = e.Message;
+            }
+            return result;
+        }
+
+        public static string createPdf(string path, string txt)
+        {
+            string result = "j'ai pdf";
+            path = path.Split('\\').Last();
+            path = path.Replace("txt", "pdf");
+            PdfWriter writer = new PdfWriter("C:\\Users\\AzureUser\\Desktop\\"+path);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            Paragraph header = new Paragraph(txt)
+               .SetTextAlignment(TextAlignment.LEFT)
+               .SetFontSize(12);
+
+            document.Add(header);
+            document.Close();
+
+            return result;
+        }
 
 
 

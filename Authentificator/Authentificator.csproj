@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthService.svc" />
+    <None Include="Connected Services\JAXWS\configuration91.svcinfo" />
+    <None Include="Connected Services\JAXWS\configuration.svcinfo" />
+    <None Include="Connected Services\JAXWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="SecurityModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SecurityModel.edmx</DependentUpon>
@@ -86,12 +92,19 @@
       <LastGenOutput>SecurityModel.cs</LastGenOutput>
     </Content>
     <Content Include="TokenService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppToken.cs" />
     <Compile Include="AuthService.svc.cs">
       <DependentUpon>AuthService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\JAXWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="IAuthService.cs" />
     <Compile Include="ITokenBuilder.cs" />
@@ -126,6 +139,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\JAXWS\CheckerServiceBean.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JAXWS\CheckingService.wsdl" />
     <None Include="packages.config" />
     <EntityDeploy Include="SecurityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -152,6 +169,9 @@
       <Project>{16102155-d784-4018-b1f7-76bd857dac7d}</Project>
       <Name>DataAccessObject</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\JAXWS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
