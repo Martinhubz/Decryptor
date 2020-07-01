@@ -73,10 +73,11 @@ namespace Decryptorus
             string key;
             try
             {
+                
+                JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
                 message.Info = "toto a la plage";
-                // ServiceDecrypt.CheckerEndpointClient platform = new ServiceDecrypt.CheckerEndpointClient();
-                //string ret = platform.checkDecrypt("apptok", "decryptInfo");
-                //System.Diagnostics.Debug.WriteLine(ret);
+                string ret = platform.checkDecrypt("apptok", "decryptInfo");
+                System.Diagnostics.Debug.WriteLine(ret);
 
             }
             catch (Exception e)

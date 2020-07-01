@@ -99,15 +99,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\JaxWsRef\configuration91.svcinfo" />
-    <None Include="Connected Services\JaxWsRef\configuration.svcinfo" />
-    <None Include="Connected Services\JaxWsRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\ServiceDecrypt\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceDecrypt\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceDecrypt\Reference.svcmap">
+    <None Include="Connected Services\JAXWS\configuration91.svcinfo" />
+    <None Include="Connected Services\JAXWS\configuration.svcinfo" />
+    <None Include="Connected Services\JAXWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -117,12 +111,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\JaxWsRef\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceDecrypt\Reference.cs">
+    <Compile Include="Connected Services\JAXWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -140,14 +129,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\JaxWsRef\CheckerServiceBean.xsd">
+    <None Include="Connected Services\JAXWS\CheckerServiceBean.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\JaxWsRef\CheckingService.wsdl" />
-    <None Include="Connected Services\ServiceDecrypt\CheckerServiceBean.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceDecrypt\CheckingService.wsdl" />
+    <None Include="Connected Services\JAXWS\CheckingService.wsdl" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -166,8 +151,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\JaxWsRef\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceDecrypt\" />
+    <WCFMetadataStorage Include="Connected Services\JAXWS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

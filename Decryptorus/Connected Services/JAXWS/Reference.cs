@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Decryptorus.JaxWsRef {
+namespace Decryptorus.JAXWS {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://facade.checkerfacade.cesi.com/", ConfigurationName="JaxWsRef.CheckerEndpoint")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://facade.checkerfacade.cesi.com/", ConfigurationName="JAXWS.CheckerEndpoint")]
     public interface CheckerEndpoint {
         
         // CODEGEN: Generating message contract since element name appToken from namespace  is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptRequest", ReplyAction="http://facade.checkerfacade.cesi.com/CheckerEndpoint/checkDecryptResponse")]
-        Decryptorus.JaxWsRef.checkDecryptResponse checkDecrypt(Decryptorus.JaxWsRef.checkDecryptRequest request);
+        Decryptorus.JAXWS.checkDecryptResponse checkDecrypt(Decryptorus.JAXWS.checkDecryptRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -27,12 +27,12 @@ namespace Decryptorus.JaxWsRef {
     public partial class checkDecryptRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="checkDecrypt", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
-        public Decryptorus.JaxWsRef.checkDecryptRequestBody Body;
+        public Decryptorus.JAXWS.checkDecryptRequestBody Body;
         
         public checkDecryptRequest() {
         }
         
-        public checkDecryptRequest(Decryptorus.JaxWsRef.checkDecryptRequestBody Body) {
+        public checkDecryptRequest(Decryptorus.JAXWS.checkDecryptRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -65,12 +65,12 @@ namespace Decryptorus.JaxWsRef {
     public partial class checkDecryptResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="checkDecryptResponse", Namespace="http://facade.checkerfacade.cesi.com/", Order=0)]
-        public Decryptorus.JaxWsRef.checkDecryptResponseBody Body;
+        public Decryptorus.JAXWS.checkDecryptResponseBody Body;
         
         public checkDecryptResponse() {
         }
         
-        public checkDecryptResponse(Decryptorus.JaxWsRef.checkDecryptResponseBody Body) {
+        public checkDecryptResponse(Decryptorus.JAXWS.checkDecryptResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -93,12 +93,12 @@ namespace Decryptorus.JaxWsRef {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface CheckerEndpointChannel : Decryptorus.JaxWsRef.CheckerEndpoint, System.ServiceModel.IClientChannel {
+    public interface CheckerEndpointChannel : Decryptorus.JAXWS.CheckerEndpoint, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CheckerEndpointClient : System.ServiceModel.ClientBase<Decryptorus.JaxWsRef.CheckerEndpoint>, Decryptorus.JaxWsRef.CheckerEndpoint {
+    public partial class CheckerEndpointClient : System.ServiceModel.ClientBase<Decryptorus.JAXWS.CheckerEndpoint>, Decryptorus.JAXWS.CheckerEndpoint {
         
         public CheckerEndpointClient() {
         }
@@ -120,16 +120,16 @@ namespace Decryptorus.JaxWsRef {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Decryptorus.JaxWsRef.checkDecryptResponse Decryptorus.JaxWsRef.CheckerEndpoint.checkDecrypt(Decryptorus.JaxWsRef.checkDecryptRequest request) {
+        Decryptorus.JAXWS.checkDecryptResponse Decryptorus.JAXWS.CheckerEndpoint.checkDecrypt(Decryptorus.JAXWS.checkDecryptRequest request) {
             return base.Channel.checkDecrypt(request);
         }
         
         public string checkDecrypt(string appToken, string decryptInfo) {
-            Decryptorus.JaxWsRef.checkDecryptRequest inValue = new Decryptorus.JaxWsRef.checkDecryptRequest();
-            inValue.Body = new Decryptorus.JaxWsRef.checkDecryptRequestBody();
+            Decryptorus.JAXWS.checkDecryptRequest inValue = new Decryptorus.JAXWS.checkDecryptRequest();
+            inValue.Body = new Decryptorus.JAXWS.checkDecryptRequestBody();
             inValue.Body.appToken = appToken;
             inValue.Body.decryptInfo = decryptInfo;
-            Decryptorus.JaxWsRef.checkDecryptResponse retVal = ((Decryptorus.JaxWsRef.CheckerEndpoint)(this)).checkDecrypt(inValue);
+            Decryptorus.JAXWS.checkDecryptResponse retVal = ((Decryptorus.JAXWS.CheckerEndpoint)(this)).checkDecrypt(inValue);
             return retVal.Body.decryptValidation;
         }
     }
