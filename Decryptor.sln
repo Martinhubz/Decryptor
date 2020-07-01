@@ -32,6 +32,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DecryptorHostIIS(1)", "..\.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptorus", "Decryptorus\Decryptorus.csproj", "{6638EF11-B15F-493A-A83C-592015635BE2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F23C520-830D-444C-9A10-9DE4235E3D4A}"
+	ProjectSection(SolutionItems) = preProject
+		packages\EASendMail.7.7.0.2\lib\net40\EASendMail.dll = packages\EASendMail.7.7.0.2\lib\net40\EASendMail.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

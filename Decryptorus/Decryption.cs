@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Authentificator;
+using EASendMail;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Decryptorus
@@ -9,7 +13,7 @@ namespace Decryptorus
     public class Decryption
     {
 
-        string AlgoXor(string text, string key)
+        public string AlgoXor(string text, string key)
         {
             var result = new StringBuilder();
 
@@ -42,6 +46,82 @@ namespace Decryptorus
 
             return result.ToString();
         }
+
+        public STG ParallelDecrypt(STG message)
+        {
+            List<Task> tasks = new List<Task>();
+            Decryption d = new Decryption();
+            KeyGenerator k = new KeyGenerator();
+            string txt = message.Data.GetValue(1).ToString();
+            string fileName = message.Data.GetValue(0).ToString();
+
+            ParallelOptions options = new ParallelOptions();
+            options.MaxDegreeOfParallelism = Environment.ProcessorCount;
+            int count = 0;
+            int numberOfKeyPossible = 600000;
+            object locky = new object();
+            k.Initialize();
+            Parallel.For(0, numberOfKeyPossible, options, (index, state) =>
+            {
+                string key;
+                lock (locky)
+                {
+                    key = k.IncrementKey();
+
+                }
+
+                string tmp = d.AlgoXor(txt, key);
+                //JAXWS.CheckerEndpointClient platform = new JAXWS.CheckerEndpointClient();
+                //string result = platform.checkOperation(AppToken.APPTOKEN, tmp);
+                Interlocked.Increment(ref count); 
+                if (key == "ZZZZ")
+                {
+                    message.StatusOp = true;
+                    message.OperationVersion = "ZZZZ";
+
+                    state.Stop();
+                }
+            });
+            //    key = k.IncrementKey();
+            message.Info = count.ToString();
+            //message.OperationVersion = "ZZZZ";
+            return message;
+        }
+
+        //public string sendEmail()
+        //{
+        //    SmtpMail oMail = new SmtpMail("TryIt");
+        //    oMail.From = "groupeprojetdevnonmobile@gmail.com";
+        //    oMail.To = "theo.fombasso@gmail.comt";
+        //    oMail.Subject = "test email from c# project";
+        //    // Set email body
+        //    oMail.TextBody = "this is a test email sent from c# project, do not reply";
+
+        //    // SMTP server address
+        //    SmtpServer oServer = new SmtpServer("smtp.emailarchitect.net");
+
+        //    // User and password for ESMTP authentication
+        //    oServer.User = "test@emailarchitect.net";
+        //    oServer.Password = "testpassword";
+
+        //    // Most mordern SMTP servers require SSL/TLS connection now.
+        //    // ConnectTryTLS means if server supports SSL/TLS, SSL/TLS will be used automatically.
+        //    oServer.ConnectType = SmtpConnectType.ConnectTryTLS;
+
+        //    // If your SMTP server uses 587 port
+        //    // oServer.Port = 587;
+
+        //    // If your SMTP server requires SSL/TLS connection on 25/587/465 port
+        //    // oServer.Port = 25; // 25 or 587 or 465
+        //    // oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+        //    Console.WriteLine("start to send email ...");
+
+        //    SmtpClient oSmtp = new SmtpClient();
+        //    oSmtp.SendMail(oServer, oMail);
+
+
+        //}
 
 
 
