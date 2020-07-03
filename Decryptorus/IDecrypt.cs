@@ -70,11 +70,7 @@ namespace Decryptorus
             this.data = data;
         }
 
-        public STG(bool statusOp)
-        {
-            this.statusOp = statusOp;
 
-        }
 
 
         [DataMember]

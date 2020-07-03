@@ -12,12 +12,13 @@ namespace Decryptorus
         public int[] Key { get => key; set => key = value; }
 
         public int begin = 65;
-        public int limit = 97;
-
+        public int limit = 90;
+        public int nbMaxKey;
         public int[] exclude = { 91, 92, 93, 94, 95, 96 };
 
         public string Initialize(int size = 4)
         {
+            nbMaxKey = (int)Math.Pow(91 - begin, 4);
             int[] newKey = new int[size];
             for (int i = 0; i <= newKey.Length - 1; i++)
             {
